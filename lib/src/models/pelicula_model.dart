@@ -1,3 +1,5 @@
+import 'package:flutter/cupertino.dart';
+
 class Peliculas {
 
   List<Pelicula> items = new List();
@@ -67,6 +69,15 @@ class Pelicula {
     overview          = json['overview'];
     releaseDate        = json['release_date'];
 
+  }
+
+  getPosterImg() {
+
+    if(posterPath == null) {
+      return AssetImage('assets/img/no-image.jpg');
+    }
+
+    return 'https://image.tmdb.org/t/p/w500/$posterPath';
   }
 
 }
